@@ -10,7 +10,8 @@
     "build": "next build",
     "biome-write": "npx @biomejs/biome format --write .",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -37,6 +38,7 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.5",
     "eslint": "^9.25.0",
+    "patch-package": "^8.0.0",
     "typescript": "^5.8.3",
     "tzdata": "^1.0.44"
   }

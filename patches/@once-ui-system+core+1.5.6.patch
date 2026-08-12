@@ -1,0 +1,26 @@
+diff --git a/node_modules/@once-ui-system/core/dist/components/Media.js b/node_modules/@once-ui-system/core/dist/components/Media.js
+index 1891dbc..07827ec 100644
+--- a/node_modules/@once-ui-system/core/dist/components/Media.js
++++ b/node_modules/@once-ui-system/core/dist/components/Media.js
+@@ -78,7 +78,7 @@ const Media = ({ src, alt = "", fillWidth = true, fill = false, loading = false,
+             ? `https://www.youtube.com/embed/${match[1]}?controls=0&rel=0&modestbranding=1`
+             : "";
+     };
+-    const isVideo = src?.endsWith(".mp4");
++    const isVideo = src?.endsWith(".mp4") || src?.endsWith(".webm") || src?.endsWith(".ogg") || src?.endsWith(".mov");
+     const isYouTube = isYouTubeVideo(src);
+     return (_jsxs(_Fragment, { children: [isEnlarged && enlarge && typeof document !== 'undefined' && (_jsx(Flex, { center: true, position: "fixed", background: "overlay", pointerEvents: "auto", onClick: handleOverlayClick, top: "0", left: "0", zIndex: 9, opacity: 100, cursor: "interactive", transition: "macro-medium", className: "cursor-interactive", style: {
+                     backdropFilter: "blur(0.5rem)",
+diff --git a/node_modules/@once-ui-system/core/dist/types.d.ts b/node_modules/@once-ui-system/core/dist/types.d.ts
+index 7360ff6..648b6b1 100644
+--- a/node_modules/@once-ui-system/core/dist/types.d.ts
++++ b/node_modules/@once-ui-system/core/dist/types.d.ts
+@@ -2,7 +2,7 @@ export type StaticSpacingToken = "0" | "1" | "2" | "4" | "8" | "12" | "16" | "20
+ export declare const schemes: string[];
+ export type Schemes = "blue" | "indigo" | "violet" | "magenta" | "pink" | "red" | "orange" | "yellow" | "moss" | "green" | "emerald" | "aqua" | "cyan";
+ export type CondensedTShirtSizes = "s" | "m" | "l";
+-export type TShirtSizes = CondensedTShirtSizes | "xs" | "xl";
++export type TShirtSizes = CondensedTShirtSizes | "xs" | "xl ";
+ export type ResponsiveSpacingToken = TShirtSizes;
+ export type ShadowSize = TShirtSizes;
+ export type SpacingToken = StaticSpacingToken | ResponsiveSpacingToken;
